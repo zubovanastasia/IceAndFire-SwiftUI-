@@ -10,8 +10,7 @@ import Combine
 @testable import IceAndFire_SwiftUI_
 
 class IceAndFire_SwiftUI_Tests: XCTestCase {
-    
-    private var mockVM: MockIceAndFireViewModel!
+ 
     private var viewModel: IceAndFireViewModel!
     private var cancellables:  Set<AnyCancellable> = []
     
@@ -19,7 +18,6 @@ class IceAndFire_SwiftUI_Tests: XCTestCase {
         viewModel = .init()
     }
     override func tearDown() {
-        mockVM = nil
         viewModel = nil
         cancellables.removeAll()
         super.tearDown()
@@ -51,7 +49,7 @@ class IceAndFire_SwiftUI_Tests: XCTestCase {
             }
         let exp = expectation(description: "exp")
         
-        let sub = mockVM.$filterTags
+        let sub = mockView.$filterTags
             .receive(on: DispatchQueue.main)
             .sink { newTags in
                 result = mockView.character

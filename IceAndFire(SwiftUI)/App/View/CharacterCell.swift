@@ -30,10 +30,3 @@ struct CharacterCell: View {
         .padding()
     }
 }
-
-struct CharacterCell_Previews: PreviewProvider {
-    static var previews: some View {
-        CharacterCell(character: .init(id: 34, name: "Test", gender: "Male", culture: "", born: "1234", died: "1267", titles: [""], aliases: [""], father: "", mother: "", books: [""]))
-    }
-}
-

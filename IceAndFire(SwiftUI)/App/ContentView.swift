@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    let container: DIContainer = .init()
     var body: some View {
-        CharacterView(model: IceAndFireViewModel(service: IceAndFireAPI()))
-            .padding()
+        CharacterView()
+            .environmentObject(container.model)
+            .environmentObject(container.filter)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        CharacterView(model: IceAndFireViewModel(service: IceAndFireAPI()))
+        ContentView()
     }
 }

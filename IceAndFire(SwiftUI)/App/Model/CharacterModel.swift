@@ -7,8 +7,12 @@
 
 import Foundation
 
-public struct Model: Codable {
+public struct Page: Codable {
     public var result: [IceAndFireCharacters]
+    
+    public init(result: [IceAndFireCharacters]) {
+        self.result = result
+    }
 }
 public struct IceAndFireCharacters: Codable, Identifiable {
     public var id: Int64
